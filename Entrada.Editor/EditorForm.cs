@@ -111,13 +111,11 @@ namespace Entrada.Editor
                 //btnFinishDocument.SetVisible(false);
                 btnSendToQA.SetVisible(false);
 
-                //List str = EditorRepository.GetAllQACategories().Result.ToList();
-
-                barCategory.Enabled = false;
+              
+                                barCategory.Enabled = false;
                 barSubCategory.Enabled = false;
 
-                //Task<Entities.QACategory[]> QACategories = JobRepository.GetAllQACategories();
-                //QACategories.Result.ToList().Add(obj);
+               
 
                 List<Entities.QACategory> objCategory = JobRepository.GetAllQACategories().Result.ToList();
                 Entities.QACategory obj = new Entities.QACategory
