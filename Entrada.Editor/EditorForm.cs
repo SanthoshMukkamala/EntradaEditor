@@ -2272,7 +2272,7 @@ namespace Entrada.Editor
         {
             SendQAJob(Entities.NextQAStatus.ReturnJobToEntradaQA);
         }
-
+        // This Method is used to Send Jobs QA 
         private void SendQAJob(Entities.NextQAStatus NextStage)
         {            
             var rtf = this.GetActiveRichEditPanel();
