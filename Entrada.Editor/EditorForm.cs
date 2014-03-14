@@ -96,7 +96,7 @@ namespace Entrada.Editor
             //    EditorCore.LogException ("Could not restore LayoutSettingsFile.", ex);
             //}
 
-            // Only for QA
+            // Only for  QA
             if (EditorCore.Settings.Editor.Type.ToLowerInvariant() == "qa")
             {
                 btnStartEditing.Caption = "Start QA Queue";
@@ -115,7 +115,7 @@ namespace Entrada.Editor
                  barCategory.Enabled = false;
                 barSubCategory.Enabled = false;
 
-                // To Add Select Item to Category
+                // To Add Select Item to Cetegory 
                 List<Entities.QACategory> objCategory = JobRepository.GetAllQACategories().Result.ToList();
                 Entities.QACategory obj = new Entities.QACategory
                 {
