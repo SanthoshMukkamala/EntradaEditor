@@ -111,8 +111,8 @@ namespace Entrada.Editor
                 //btnFinishDocument.SetVisible(false);
                 btnSendToQA.SetVisible(false);
 
-              
-                                barCategory.Enabled = false;
+              // For QA Category
+                 barCategory.Enabled = false;
                 barSubCategory.Enabled = false;
 
                
