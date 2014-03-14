@@ -128,7 +128,7 @@ namespace Entrada.Editor
                 objCategory.Add(obj);
 
                 //Entities.QACategory obj = new Entities.QACategory { Id = -1, Name = "Select", ParentId = -1, Code = "", Description = "" };                
-                rptLookUpEditCategory.DataSource = objCategory.OrderBy(p => p.Id); // QACategories.Result.ToList();
+                rptLookUpEditCategory.DataSource = objCategory.OrderBy(a => a.Id); // QACategories.Result.ToList();
                 rptLookUpEditCategory.ValueMember = "Id";
                 rptLookUpEditCategory.DisplayMember = "Name";
                 LookUpColumnInfo lookupColumnInfo = new LookUpColumnInfo { Caption = "", FieldName = "Name" };
