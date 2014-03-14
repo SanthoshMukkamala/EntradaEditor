@@ -1,0 +1,131 @@
+﻿body, input, button {
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    background-color: rgb(245, 245, 245);
+}
+
+body {
+    background-color: rgb(245, 245, 245);
+    color: #333;
+    /*max-width: 980px; /*Remove this to make it full screen*/*/
+    margin: 1em auto;
+}
+
+.container
+{
+    /*width: 900px;*/
+}
+
+.navbar .navbar-inner {
+    border-radius: 0px 0px 0px 0px;
+    border-bottom: 1px solid rgb(51, 124, 161);
+    border-top: 1px solid rgb(51, 124, 161);
+    background: linear-gradient(to bottom, rgb(0, 169, 206) 0%, rgb(0, 159, 194) 100%) repeat scroll 0% 0% rgb(0, 159, 194);
+    height: 45px;
+}
+
+.navbar .brand {
+    text-shadow: 0px 1px 0px rgb(51, 124, 161);
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.navbar .nav > li > a {
+    background: none;
+    box-shadow: none;
+    height: 20px;
+    line-height: 20px;
+    padding: 5px 10px;
+    margin-right: 0;
+    margin-top: 0px;
+    color: white;
+    border: none;
+}
+
+.navbar .nav {
+    margin-top: 5px;
+}
+
+.navbar .nav li.dropdown > a .caret {
+    border-top-color: white;
+    border-bottom-color: white;
+    color: white;
+}
+
+.navbar .nav .dropdown-toggle .caret {
+    margin-top: 8px;
+    border-top-color: white;
+    border-bottom-color: white;
+    color: white;
+}
+
+.white-panel
+{
+    background-color: #fff;
+    border: 1px solid #dadada;
+    padding: 0px;
+    margin-bottom: 40px;
+    color: #333;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.075);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+}
+.download-box
+{
+    position: relative;
+}
+
+    .download-box .row
+    {
+        position: relative;
+        height: 429px;
+    }
+
+    .download-box .slider-container
+    {
+        position: absolute;
+        bottom: 0;
+        right: -20px;
+    }
+
+    .download-box ul.slider
+    {
+        list-style: none;
+        margin: 0px;
+    }
+
+        .download-box ul.slider img
+        {
+            max-width: none;
+        }
+
+    .download-box .small-text
+    {
+        margin-bottom: 0px;
+    }
+
+.padding-large
+{
+    padding: 45px;
+}
+
+.orange-asterisks
+{
+    margin: 30px 0px;
+    list-style: none;
+}
+
+    .orange-asterisks li
+    {
+        margin-bottom: 15px;
+        padding-left: 25px;
+        padding-top: 2px;
+        font-size: 15px;
+        background-image: url('asterisk_orange.png');
+        background-repeat: no-repeat;
+        background-position: 0px 5px;
+    }

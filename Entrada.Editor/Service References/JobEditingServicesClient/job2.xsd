@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://ws.entradahealth.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://editing_ws_app.entrada-dev.local/job.editing.services.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entrada.Entities" />
+  <xs:import schemaLocation="https://editing_ws_app.entrada-dev.local/job.editing.services.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="Authenticate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Entrada.Entities" minOccurs="0" name="userType" type="q1:EntradaUserType" />
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://ws.entradahealth.com/" minOccurs="0" name="AuthenticateResult" nillable="true" type="q2:EntradaUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EntradaUser">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://ws.entradahealth.com/" base="q3:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClinicsAndJobsFilter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClinicsFilter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DictatorsFilter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="JobsFilter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Roles" nillable="true" type="q3:ArrayOfUserRole" />
+          <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserSettings" nillable="true" type="q3:UserSettings" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Entrada.Entities" minOccurs="0" name="UserType" type="q4:EntradaUserType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q5="http://ws.entradahealth.com/" name="EntradaUser" nillable="true" type="q5:EntradaUser" />
+  <xs:complexType name="EntradaEntity">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element xmlns:q6="http://ws.entradahealth.com/" name="EntradaEntity" nillable="true" type="q6:EntradaEntity" />
+  <xs:complexType name="ArrayOfUserRole">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://ws.entradahealth.com/" minOccurs="0" maxOccurs="unbounded" name="UserRole" nillable="true" type="q7:UserRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q8="http://ws.entradahealth.com/" name="ArrayOfUserRole" nillable="true" type="q8:ArrayOfUserRole" />
+  <xs:complexType name="UserRole">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://ws.entradahealth.com/" base="q9:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessAllClinics" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Clinics" nillable="true" type="q9:ArrayOfClinicEntity" />
+          <xs:element minOccurs="0" name="ClinicsFilter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dictators" nillable="true" type="q9:ArrayOfDictatorEntity" />
+          <xs:element minOccurs="0" name="DictatorsFilter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="JobsFilter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q10="http://ws.entradahealth.com/" name="UserRole" nillable="true" type="q10:UserRole" />
+  <xs:complexType name="ArrayOfClinicEntity">
+    <xs:sequence>
+      <xs:element xmlns:q11="http://ws.entradahealth.com/" minOccurs="0" maxOccurs="unbounded" name="ClinicEntity" nillable="true" type="q11:ClinicEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q12="http://ws.entradahealth.com/" name="ArrayOfClinicEntity" nillable="true" type="q12:ArrayOfClinicEntity" />
+  <xs:complexType name="ClinicEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://ws.entradahealth.com/" base="q13:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnableTDD" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HasADT" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="JobTag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Location" type="xs:int" />
+          <xs:element minOccurs="0" name="LocationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientTag" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q14="http://ws.entradahealth.com/" name="ClinicEntity" nillable="true" type="q14:ClinicEntity" />
+  <xs:complexType name="ArrayOfDictatorEntity">
+    <xs:sequence>
+      <xs:element xmlns:q15="http://ws.entradahealth.com/" minOccurs="0" maxOccurs="unbounded" name="DictatorEntity" nillable="true" type="q15:DictatorEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q16="http://ws.entradahealth.com/" name="ArrayOfDictatorEntity" nillable="true" type="q16:ArrayOfDictatorEntity" />
+  <xs:complexType name="DictatorEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://ws.entradahealth.com/" base="q17:PhysicianEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClinicID" type="xs:int" />
+          <xs:element minOccurs="0" name="ClinicReviewEnabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DictatorID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ESignatureEnabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ESignatureLocation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ESignatureStamp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Signature" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TemplatesFolder" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VREnabled" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q18="http://ws.entradahealth.com/" name="DictatorEntity" nillable="true" type="q18:DictatorEntity" />
+  <xs:complexType name="PhysicianEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://ws.entradahealth.com/" base="q19:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClinicName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DOB" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Initials" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MI" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PhysicianID" nillable="true" type="xs:anyType" />
+          <xs:element minOccurs="0" name="SSN" nillable="true" type="xs:anyType" />
+          <xs:element minOccurs="0" name="Sex" nillable="true" type="xs:anyType" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q20="http://ws.entradahealth.com/" name="PhysicianEntity" nillable="true" type="q20:PhysicianEntity" />
+  <xs:complexType name="UserSettings">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://ws.entradahealth.com/" base="q21:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="JobsDefaultSort" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastPasswordChange" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MustChangePassword" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OneTimePassword" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PasswordChangeInProgress" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PasswordExpirationDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PasswordExpirationDays" type="xs:int" />
+          <xs:element minOccurs="0" name="PasswordTokenExpirationDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TimeZone" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q22="http://ws.entradahealth.com/" name="UserSettings" nillable="true" type="q22:UserSettings" />
+  <xs:element name="AuthenticateASPMembership">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticateASPMembershipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://ws.entradahealth.com/" minOccurs="0" name="AuthenticateASPMembershipResult" nillable="true" type="q23:EntradaUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordWithUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Entrada.Entities" minOccurs="0" name="userType" type="q24:EntradaUserType" />
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="oldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordWithUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsSessionAlive">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsSessionAliveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsSessionAliveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignIn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignInResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SignInResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSignInToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="signInToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSignInTokenResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignOff">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignOffResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SignOffResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateASPMembershipUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateASPMembershipUsersResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClaimJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jobNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClaimJobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://ws.entradahealth.com/" minOccurs="0" name="ClaimJobResult" nillable="true" type="q25:MedicalJobEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="MedicalJobEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://ws.entradahealth.com/" base="q26:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CC" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CompletedOn" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CustomerJobNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dictations" nillable="true" type="q26:ArrayOfMedicalDictationEntity" />
+          <xs:element minOccurs="0" name="Duration" type="xs:int" />
+          <xs:element minOccurs="0" name="Editor" nillable="true" type="q26:EditorEntity" />
+          <xs:element minOccurs="0" name="Encounter" nillable="true" type="q26:EncounterEntity" />
+          <xs:element minOccurs="0" name="File" nillable="true" type="q26:FileEntity" />
+          <xs:element minOccurs="0" name="HasGenericPatient" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="JobNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JobType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OldStatusStage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Owner" nillable="true" type="q26:PhysicianEntity" />
+          <xs:element minOccurs="0" name="ParentJobNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Priority" type="xs:int" />
+          <xs:element minOccurs="0" name="QAData" nillable="true" type="q26:QAEntity" />
+          <xs:element minOccurs="0" name="ReceivedOn" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ReturnedOn" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SpeechFolderTag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Stat" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Status" type="xs:int" />
+          <xs:element minOccurs="0" name="StatusDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Entrada.Entities" minOccurs="0" name="StatusStage" type="q27:EditionStage" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q28="http://ws.entradahealth.com/" name="MedicalJobEntity" nillable="true" type="q28:MedicalJobEntity" />
+  <xs:complexType name="ArrayOfMedicalDictationEntity">
+    <xs:sequence>
+      <xs:element xmlns:q29="http://ws.entradahealth.com/" minOccurs="0" maxOccurs="unbounded" name="MedicalDictationEntity" nillable="true" type="q29:MedicalDictationEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q30="http://ws.entradahealth.com/" name="ArrayOfMedicalDictationEntity" nillable="true" type="q30:ArrayOfMedicalDictationEntity" />
+  <xs:complexType name="MedicalDictationEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://ws.entradahealth.com/" base="q31:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Dictator" nillable="true" type="q31:DictatorEntity" />
+          <xs:element minOccurs="0" name="Document" nillable="true" type="q31:MedicalDocumentEntity" />
+          <xs:element minOccurs="0" name="Duration" type="xs:int" />
+          <xs:element minOccurs="0" name="File" nillable="true" type="q31:FileEntity" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="JobType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MedicalJob" nillable="true" type="q31:MedicalJobEntity" />
+          <xs:element minOccurs="0" name="NotUseForAudioUpdating" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Status" type="xs:int" />
+          <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TranscriptionMode" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q32="http://ws.entradahealth.com/" name="MedicalDictationEntity" nillable="true" type="q32:MedicalDictationEntity" />
+  <xs:complexType name="MedicalDocumentEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://ws.entradahealth.com/" base="q33:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Dictation" nillable="true" type="q33:MedicalDictationEntity" />
+          <xs:element minOccurs="0" name="DocumentTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="File" nillable="true" type="q33:FileEntity" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="MedicalJob" nillable="true" type="q33:MedicalJobEntity" />
+          <xs:element minOccurs="0" name="PostedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostingDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Status" type="xs:int" />
+          <xs:element minOccurs="0" name="XmlData" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q34="http://ws.entradahealth.com/" name="MedicalDocumentEntity" nillable="true" type="q34:MedicalDocumentEntity" />
+  <xs:complexType name="FileEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q35="http://ws.entradahealth.com/" base="q35:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Checksum" type="xs:int" />
+          <xs:element minOccurs="0" name="Content" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="JobNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q36="http://ws.entradahealth.com/" name="FileEntity" nillable="true" type="q36:FileEntity" />
+  <xs:complexType name="EditorEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q37="http://ws.entradahealth.com/" base="q37:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AutoDownload" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ClinicID" type="xs:int" />
+          <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EditingCompanyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EditingCompanyId" type="xs:int" />
+          <xs:element minOccurs="0" name="EditingWorkflowModelId" type="xs:int" />
+          <xs:element minOccurs="0" name="EditorID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EditorName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EditorQAIDMatch" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IdleTime" type="xs:int" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaxJobs" type="xs:int" />
+          <xs:element minOccurs="0" name="NumJobs" type="xs:int" />
+          <xs:element minOccurs="0" name="NumStat" type="xs:int" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q38="http://ws.entradahealth.com/" name="EditorEntity" nillable="true" type="q38:EditorEntity" />
+  <xs:complexType name="EncounterEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="http://ws.entradahealth.com/" base="q39:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttendingDoctor" nillable="true" type="q39:DictatorEntity" />
+          <xs:element minOccurs="0" name="Clinic" nillable="true" type="q39:ClinicEntity" />
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Document" nillable="true" type="q39:MedicalDocumentEntity" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Jobs" nillable="true" type="q39:ArrayOfMedicalJobEntity" />
+          <xs:element minOccurs="0" name="Patient" nillable="true" type="q39:PatientEntity" />
+          <xs:element minOccurs="0" name="ReasonTag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReasonText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReferringDoctor" nillable="true" type="q39:PhysicianEntity" />
+          <xs:element minOccurs="0" name="Status" type="xs:int" />
+          <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q40="http://ws.entradahealth.com/" name="EncounterEntity" nillable="true" type="q40:EncounterEntity" />
+  <xs:complexType name="ArrayOfMedicalJobEntity">
+    <xs:sequence>
+      <xs:element xmlns:q41="http://ws.entradahealth.com/" minOccurs="0" maxOccurs="unbounded" name="MedicalJobEntity" nillable="true" type="q41:MedicalJobEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q42="http://ws.entradahealth.com/" name="ArrayOfMedicalJobEntity" nillable="true" type="q42:ArrayOfMedicalJobEntity" />
+  <xs:complexType name="PatientEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q43="http://ws.entradahealth.com/" base="q43:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AlternateID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IsGeneric" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MRN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SSN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q44="http://ws.entradahealth.com/" name="PatientEntity" nillable="true" type="q44:PatientEntity" />
+  <xs:complexType name="QAEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q45="http://ws.entradahealth.com/" base="q45:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CanReturnQACategory" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Category" nillable="true" type="q45:QACategory" />
+          <xs:element minOccurs="0" name="LastQAEditorID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastQANote" nillable="true" type="xs:string" />
+          <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Entrada.Entities" minOccurs="0" name="NextQAStatusFlags" type="q46:NextQAStatus" />
+          <xs:element minOccurs="0" name="QAStage" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q47="http://ws.entradahealth.com/" name="QAEntity" nillable="true" type="q47:QAEntity" />
+  <xs:complexType name="QACategory">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q48="http://ws.entradahealth.com/" base="q48:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q49="http://ws.entradahealth.com/" name="QACategory" nillable="true" type="q49:QACategory" />
+  <xs:element name="ClaimNextJob">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClaimNextJobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://ws.entradahealth.com/" minOccurs="0" name="ClaimNextJobResult" nillable="true" type="q50:MedicalJobEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadJobFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jobNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadJobFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://ws.entradahealth.com/" minOccurs="0" name="DownloadJobFileResult" nillable="true" type="q51:FileEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndWork">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="timeSheetItemId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndWorkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableJobs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dictatorID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="jobType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableJobsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://ws.entradahealth.com/" minOccurs="0" name="GetAvailableJobsResult" nillable="true" type="q52:ArrayOfMedicalJobEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableJobsJSON">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sort" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableJobsJSONResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAvailableJobsJSONResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableJobsTable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dictatorID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="jobType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableJobsTableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAvailableJobsTableResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllQACategories">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllQACategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://ws.entradahealth.com/" minOccurs="0" name="GetAllQACategoriesResult" nillable="true" type="q53:ArrayOfQACategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfQACategory">
+    <xs:sequence>
+      <xs:element xmlns:q54="http://ws.entradahealth.com/" minOccurs="0" maxOccurs="unbounded" name="QACategory" nillable="true" type="q54:QACategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q55="http://ws.entradahealth.com/" name="ArrayOfQACategory" nillable="true" type="q55:ArrayOfQACategory" />
+  <xs:element name="GetChildQACategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://ws.entradahealth.com/" minOccurs="0" name="parent" nillable="true" type="q56:QACategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildQACategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://ws.entradahealth.com/" minOccurs="0" name="GetChildQACategoriesResult" nillable="true" type="q57:ArrayOfQACategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditor">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://ws.entradahealth.com/" minOccurs="0" name="GetEditorResult" nillable="true" type="q58:EditorEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditorAssignedJobs">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditorAssignedJobsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://ws.entradahealth.com/" minOccurs="0" name="GetEditorAssignedJobsResult" nillable="true" type="q59:ArrayOfMedicalJobEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jobNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://ws.entradahealth.com/" minOccurs="0" name="GetJobResult" nillable="true" type="q60:MedicalJobEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQACategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="categoryId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQACategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://ws.entradahealth.com/" minOccurs="0" name="GetQACategoryResult" nillable="true" type="q61:QACategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsJobAssignedToMe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jobNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsJobAssignedToMeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsJobAssignedToMeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MyWorkSummary">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MyWorkSummaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://ws.entradahealth.com/" minOccurs="0" name="MyWorkSummaryResult" nillable="true" type="q62:ArrayOfWorkSummaryEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfWorkSummaryEntity">
+    <xs:sequence>
+      <xs:element xmlns:q63="http://ws.entradahealth.com/" minOccurs="0" maxOccurs="unbounded" name="WorkSummaryEntity" nillable="true" type="q63:WorkSummaryEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q64="http://ws.entradahealth.com/" name="ArrayOfWorkSummaryEntity" nillable="true" type="q64:ArrayOfWorkSummaryEntity" />
+  <xs:complexType name="WorkSummaryEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q65="http://ws.entradahealth.com/" base="q65:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NumChars" type="xs:int" />
+          <xs:element minOccurs="0" name="NumCharsPC" type="xs:int" />
+          <xs:element minOccurs="0" name="NumLines" type="xs:int" />
+          <xs:element minOccurs="0" name="NumPages" type="xs:int" />
+          <xs:element minOccurs="0" name="NumVBC" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q66="http://ws.entradahealth.com/" name="WorkSummaryEntity" nillable="true" type="q66:WorkSummaryEntity" />
+  <xs:element name="ReleaseJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jobNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReleaseJobResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SplitJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://ws.entradahealth.com/" minOccurs="0" name="task" nillable="true" type="q67:SplitJobTaskEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SplitJobTaskEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q68="http://ws.entradahealth.com/" base="q68:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="JobNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JobType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Patient" nillable="true" type="q68:PatientEntity" />
+          <xs:element minOccurs="0" name="RecognizedText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SplitMode" type="ser:char" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q69="http://ws.entradahealth.com/" name="SplitJobTaskEntity" nillable="true" type="q69:SplitJobTaskEntity" />
+  <xs:element name="SplitJobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://ws.entradahealth.com/" minOccurs="0" name="SplitJobResult" nillable="true" type="q70:MedicalJobEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnCompleteJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://ws.entradahealth.com/" minOccurs="0" name="task" nillable="true" type="q71:ReturnJobTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ReturnJobTask">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q72="http://ws.entradahealth.com/" base="q72:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DistributionList" nillable="true" type="q72:ArrayOfDistributionItemEntity" />
+          <xs:element minOccurs="0" name="File" nillable="true" type="q72:FileEntity" />
+          <xs:element minOccurs="0" name="GenericPatient" type="xs:boolean" />
+          <xs:element minOccurs="0" name="JobNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QACategory" nillable="true" type="q72:QACategory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q73="http://ws.entradahealth.com/" name="ReturnJobTask" nillable="true" type="q73:ReturnJobTask" />
+  <xs:complexType name="ArrayOfDistributionItemEntity">
+    <xs:sequence>
+      <xs:element xmlns:q74="http://ws.entradahealth.com/" minOccurs="0" maxOccurs="unbounded" name="DistributionItemEntity" nillable="true" type="q74:DistributionItemEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q75="http://ws.entradahealth.com/" name="ArrayOfDistributionItemEntity" nillable="true" type="q75:ArrayOfDistributionItemEntity" />
+  <xs:complexType name="DistributionItemEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q76="http://ws.entradahealth.com/" base="q76:EntradaEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Mode" type="q76:DistributionItemMode" />
+          <xs:element minOccurs="0" name="Referring" nillable="true" type="q76:PhysicianEntity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q77="http://ws.entradahealth.com/" name="DistributionItemEntity" nillable="true" type="q77:DistributionItemEntity" />
+  <xs:simpleType name="DistributionItemMode">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element xmlns:q78="http://ws.entradahealth.com/" name="DistributionItemMode" nillable="true" type="q78:DistributionItemMode" />
+  <xs:element name="ReturnCompleteJobResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnIncompleteJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://ws.entradahealth.com/" minOccurs="0" name="task" nillable="true" type="q79:ReturnJobTask" />
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Entrada.Entities" minOccurs="0" name="status" type="q80:NextQAStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnIncompleteJobResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartWork">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartWorkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StartWorkResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

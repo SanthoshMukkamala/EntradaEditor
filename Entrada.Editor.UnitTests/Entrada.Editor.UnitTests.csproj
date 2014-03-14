@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{357A9C40-29F7-4863-9E24-28BD9C7BF0E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entrada.Editor.UnitTests</RootNamespace>
+    <AssemblyName>Entrada.Editor.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PublishClickOnce|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\PublishClickOnce\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Words, Version=13.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Aspose\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DevExpress 13.2\Components\Bin\Framework\DevExpress.Data.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Docs.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DevExpress 13.2\Components\Bin\Framework\DevExpress.Docs.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v13.2.Core, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DevExpress 13.2\Components\Bin\Framework\DevExpress.Office.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v13.2.Core, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DevExpress 13.2\Components\Bin\Framework\DevExpress.RichEdit.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Entrada.Entities, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\WebServices\Entrada.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="BaseTemplateTest.cs" />
+    <Compile Include="BaseTest.cs" />
+    <Compile Include="DocumentTaggerTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DocumentMacroReplacerTests.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateTests3.cs" />
+    <Compile Include="TemplateTests2.cs" />
+    <Compile Include="TemplateTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplatesExpectedResults\0001.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0002.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0003.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0004.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0005.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0006.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0007.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0008.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0009.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0010.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0011.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0012.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0013.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0014.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0015.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0016.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0017.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0018.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0019.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0020.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0021.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0022.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0023.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0024.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0025.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0026.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0027.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0028.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0029.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0031.png" />
+    <EmbeddedResource Include="TestData\autotext1.txt" />
+    <EmbeddedResource Include="TestData\autotext2.txt" />
+    <EmbeddedResource Include="TestData\autotext3.txt" />
+    <EmbeddedResource Include="TestData\autotext4.txt" />
+    <EmbeddedResource Include="TestData\autotext5.txt" />
+    <EmbeddedResource Include="TestData\tdd6.txt" />
+    <EmbeddedResource Include="TestData\tdd5.txt" />
+    <EmbeddedResource Include="TestData\tdd4.txt" />
+    <EmbeddedResource Include="TestData\tdd3.txt" />
+    <EmbeddedResource Include="TestData\tdd2.txt" />
+    <EmbeddedResource Include="TestData\tdd1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entrada.Edit.Core\Entrada.Editor.Core.csproj">
+      <Project>{7c5d556a-3633-4653-b520-79350f92eae6}</Project>
+      <Name>Entrada.Editor.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestTemplates\0018 - AWH - OfficeNote.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Aspose.Words.lic" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestTemplates\0001 - AAL - Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0002 - AAL - Progress Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0003 - AGH_OfficeVisitTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0004 - AGH_Radiology.doc" />
+    <EmbeddedResource Include="TestTemplates\0005 - AGH_DEXA.doc" />
+    <EmbeddedResource Include="TestTemplates\0006 - AHC_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0007 - AKR - Action_Taken_Complainant.doc" />
+    <EmbeddedResource Include="TestTemplates\0008 - AKR - Action_Taken_Victim.doc" />
+    <EmbeddedResource Include="TestTemplates\0009 - AKR - Case_Status_Complainant.doc" />
+    <EmbeddedResource Include="TestTemplates\0019 - AKR - Case_Status_Victim.doc" />
+    <EmbeddedResource Include="TestTemplates\0010 - AKR - ROI_Complainant.doc" />
+    <EmbeddedResource Include="TestTemplates\0011 - AKR - ROI_Victim.doc" />
+    <EmbeddedResource Include="TestTemplates\0012 - AMA_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0013 - ANI - Clinic Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0014 - AOA_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0015 - AOA_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0016 - APC - APC_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0017 - AWH - Letterhead.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestTemplates\0020 - BLO_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0021 - BMC - Addendum.doc" />
+    <EmbeddedResource Include="TestTemplates\0022 - BMC - Clinic Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0023 - BMC - Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0024 - BMC - Letter_IM.doc" />
+    <EmbeddedResource Include="TestTemplates\0025 - BMC - On Call Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0026 - BMC - Pathology Report.doc" />
+    <EmbeddedResource Include="TestTemplates\0027 - BMC - Progress Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0028 - BNJ_ChartNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0029 - BNJ_ImpairmentRating.doc" />
+    <EmbeddedResource Include="TestTemplates\0030 - BNJ_Letterhead.doc" />
+    <EmbeddedResource Include="TestTemplates\0031 - BNJ_ProcedureNote.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestTemplates\0032 - CAC_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0033 - CCV_CTA.doc" />
+    <EmbeddedResource Include="TestTemplates\0034 - CCV_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0035 - CCV_TDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0036 - CCV_TEE.doc" />
+    <EmbeddedResource Include="TestTemplates\0037 - CHN_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0038 - CIO - Chart Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0039 - CIO - Chart Note_PA.doc" />
+    <EmbeddedResource Include="TestTemplates\0040 - CIO - ClinicNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0041 - CIO - Electrodiagnostic_Study.doc" />
+    <EmbeddedResource Include="TestTemplates\0042 - CIO - IME.doc" />
+    <EmbeddedResource Include="TestTemplates\0043 - CIO - Letter_MD.doc" />
+    <EmbeddedResource Include="TestTemplates\0044 - CIO - Letter_Other.doc" />
+    <EmbeddedResource Include="TestTemplates\0045 - CIO - Letter_PA.doc" />
+    <EmbeddedResource Include="TestTemplates\0046 - CIO - OpNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0047 - CIO - ProcedureNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0048 - CIO - Radiologic_Interpretation.doc" />
+    <EmbeddedResource Include="TestTemplates\0049 - CIO - SJOSC_OpNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0050 - CIO - WorkComp.doc" />
+    <EmbeddedResource Include="TestTemplates\0051 - CMA - Diagnostics.doc" />
+    <EmbeddedResource Include="TestTemplates\0052 - CMA - Followup Office Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0053 - CMA - Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0054 - CMA - New Patient Office Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0055 - CMC_Confidential__Nonpatient.doc" />
+    <EmbeddedResource Include="TestTemplates\0056 - CMC_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0057 - CMC_Office_Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0058 - CMC_Op_Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0059 - CMC_Phone_Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0060 - CMC_Surgical_Booking.doc" />
+    <EmbeddedResource Include="TestTemplates\0062 - CPC - Clinic Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0061 - COO_ProgressNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0063 - CRO - Office Visit.doc" />
+    <EmbeddedResource Include="TestTemplates\0064 - CRS - Addendum.doc" />
+    <EmbeddedResource Include="TestTemplates\0065 - CRS - Hospital Visit.doc" />
+    <EmbeddedResource Include="TestTemplates\0066 - CRS - Inpatient Consult.doc" />
+    <EmbeddedResource Include="TestTemplates\0067 - CRS - Office Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0068 - CRS - Operative Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0069 - CRS - Outpatient Consult.doc" />
+    <EmbeddedResource Include="TestTemplates\0070 - CRS - Patient Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0071 - CRS - Phone Note_Misc.doc" />
+    <EmbeddedResource Include="TestTemplates\0072 - CVA - Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0073 - CVA - Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0074 - CVA - PAMO-Dobutamine.NST.doc" />
+    <EmbeddedResource Include="TestTemplates\0075 - CVA - PAMO-Dobutamine.SEC.doc" />
+    <EmbeddedResource Include="TestTemplates\0076 - CVA - PAMO-Holter.doc" />
+    <EmbeddedResource Include="TestTemplates\0077 - CVA - PAMO-LEXISCAN.doc" />
+    <EmbeddedResource Include="TestTemplates\0078 - CVA - PAMO-NST.CARDIOLITE.doc" />
+    <EmbeddedResource Include="TestTemplates\0079 - CVA - PAMO-PVL-PA.doc" />
+    <EmbeddedResource Include="TestTemplates\0080 - CVA - PAMO-STECHO.doc" />
+    <EmbeddedResource Include="TestTemplates\0081 - CVA - PAMO-TREADMILL.doc" />
+    <EmbeddedResource Include="TestTemplates\0082 - CVA - VBMO-Dobutamine.NST.doc" />
+    <EmbeddedResource Include="TestTemplates\0083 - CVA - VBMO-Dobutamine.SEC.doc" />
+    <EmbeddedResource Include="TestTemplates\0084 - CVA - VBMO-Holter.doc" />
+    <EmbeddedResource Include="TestTemplates\0085 - CVA - VBMO-LEXISCAN.doc" />
+    <EmbeddedResource Include="TestTemplates\0086 - CVA - VBMO-NST.CARDIOLITE.doc" />
+    <EmbeddedResource Include="TestTemplates\0087 - CVA - VBMO-PVL-VBMO.doc" />
+    <EmbeddedResource Include="TestTemplates\0088 - CVA - VBMO-STECHO.doc" />
+    <EmbeddedResource Include="TestTemplates\0089 - CVA - VBMO-TREADMILL.doc" />
+    <EmbeddedResource Include="TestTemplates\0090 - CWH_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0091 - DJW - Riverpark_Radiology.doc" />
+    <EmbeddedResource Include="TestTemplates\0092 - DSGLaw - ROI_Complainant.doc" />
+    <EmbeddedResource Include="TestTemplates\0093 - EMS - Elder Acute Visit.doc" />
+    <EmbeddedResource Include="TestTemplates\0094 - EMS - Elder Annual History and Physical Exam.doc" />
+    <EmbeddedResource Include="TestTemplates\0095 - EMS - Elder History and Physical Examination.doc" />
+    <EmbeddedResource Include="TestTemplates\0096 - EMS - Elder Interval.doc" />
+    <EmbeddedResource Include="TestTemplates\0097 - EMS - Elder Medical - Discharge Summary.doc" />
+    <EmbeddedResource Include="TestTemplates\0098 - EMS - Elder OnCall.doc" />
+    <EmbeddedResource Include="TestTemplates\0099 - ETM_Addendum.doc" />
+    <EmbeddedResource Include="TestTemplates\0100 - ETM_ChartNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0101 - ETM_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0102 - ETM_OfficeVisitTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0103 - ETM_SleepStudy.doc" />
+    <EmbeddedResource Include="TestTemplates\0104 - ETM_Study.doc" />
+    <EmbeddedResource Include="TestTemplates\0105 - ETM - ProgressNote_TDD.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TemplatesExpectedResults\0032.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0033.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0034.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0035.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0036.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0037.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0038.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0039.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0040.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0041.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0042.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0043.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0044.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0045.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0046.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0047.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0048.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0049.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0050.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0051.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0052.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0053.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0054.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0055.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0056.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0057.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0058.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0059.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0060.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0062.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0063.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0064.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0065.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0066.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0067.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0068.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0069.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0070.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0071.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0072.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0073.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0074.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0075.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0076.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0077.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0078.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0079.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0080.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0081.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0082.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0083.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0084.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0085.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0086.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0087.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0088.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0089.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0090.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0091.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0092.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0093.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0094.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0095.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0096.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0097.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0098.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0099.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestTemplates\0124 - FAL_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0106 - EXC - CTSA_Addendum.doc" />
+    <EmbeddedResource Include="TestTemplates\0107 - EXC - CTSA_LetterHead.doc" />
+    <EmbeddedResource Include="TestTemplates\0108 - EXC-EHO - EXC_Followup Visit.doc" />
+    <EmbeddedResource Include="TestTemplates\0109 - EXC-EHO - EXC_LetterHead.doc" />
+    <EmbeddedResource Include="TestTemplates\0110 - EXC-EHO - EXC_Office Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0111 - EXC-EHO - EXC_Office Visit.doc" />
+    <EmbeddedResource Include="TestTemplates\0112 - EXC-GSX - GS_Addendum.doc" />
+    <EmbeddedResource Include="TestTemplates\0113 - EXC-GSX - GS_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0114 - EXC-GSX - GS_OfficeNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0115 - EXC-LCA - EXC_LetterHead.doc" />
+    <EmbeddedResource Include="TestTemplates\0116 - EXC-LCA - EXC_MedicationList.doc" />
+    <EmbeddedResource Include="TestTemplates\0117 - EXC-LCA - EXC_OfficeNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0118 - EXC-NEU - Neuro_Addendum.doc" />
+    <EmbeddedResource Include="TestTemplates\0119 - EXC-NEU - Neuro_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0120 - EXC-NEU - Neuro_OfficeNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0121 - EXC-WGA - GI_Addendum.doc" />
+    <EmbeddedResource Include="TestTemplates\0122 - EXC-WGA - GI_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0123 - EXC-WGA - GI_ProgressNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0125 - HAC_AdmitDischargeNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0126 - HAC_Letterhead-Plain.doc" />
+    <EmbeddedResource Include="TestTemplates\0127 - HAC_MISCNOTE.doc" />
+    <EmbeddedResource Include="TestTemplates\0128 - HAC_OUT-New.doc" />
+    <EmbeddedResource Include="TestTemplates\0129 - HAC_ST-THOMAS_OUT-New.doc" />
+    <EmbeddedResource Include="TestTemplates\0130 - HAV_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0131 - HCH - Generic Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0132 - HCH_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0133 - HSA_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0134 - HUC - Office Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0135 - HVR_Addendum.doc" />
+    <EmbeddedResource Include="TestTemplates\0136 - HVR_PHS.doc" />
+    <EmbeddedResource Include="TestTemplates\0137 - HVR_Radiology.doc" />
+    <EmbeddedResource Include="TestTemplates\0138 - MMI_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0139 - MNG - Administrative Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0140 - MNG - Clinic Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0141 - MOG - AS_Clinic Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0142 - MOG - AS_Surgery Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0143 - MOG - AS_WC Clinic Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0144 - MOG - Chart Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0145 - MOG - Express notes.doc" />
+    <EmbeddedResource Include="TestTemplates\0146 - MOG - WC Clinic Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0147 - MOR_Addendum.doc" />
+    <EmbeddedResource Include="TestTemplates\0148 - MOR_Amendment.doc" />
+    <EmbeddedResource Include="TestTemplates\0149 - MOR_ClinicNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0150 - MOR_IME.doc" />
+    <EmbeddedResource Include="TestTemplates\0151 - MOR_InternalMemo.doc" />
+    <EmbeddedResource Include="TestTemplates\0152 - MOR_LabNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0153 - MOR_Letterhead_Winfield.doc" />
+    <EmbeddedResource Include="TestTemplates\0154 - MOR_Ltr_IntMemo_Winfield.doc" />
+    <EmbeddedResource Include="TestTemplates\0155 - MOR_OB_Letterhead.doc" />
+    <EmbeddedResource Include="TestTemplates\0156 - MOR_OpReport.doc" />
+    <EmbeddedResource Include="TestTemplates\0157 - MOR_ProcedureNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0158 - MOR_TeleCall.doc" />
+    <EmbeddedResource Include="TestTemplates\0159 - MSA_HP.doc" />
+    <EmbeddedResource Include="TestTemplates\0160 - MSA_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0161 - MSA_OperativeReport.doc" />
+    <EmbeddedResource Include="TestTemplates\0162 - MSA_ProgressNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0163 - MSA_TreatmentRecord.doc" />
+    <EmbeddedResource Include="TestTemplates\0164 - MSA_Vascular.doc" />
+    <EmbeddedResource Include="TestTemplates\0165 - MTL_Consult.doc" />
+    <EmbeddedResource Include="TestTemplates\0166 - MTL_LetterheadPlain.doc" />
+    <EmbeddedResource Include="TestTemplates\0167 - MTL_XRray.doc" />
+    <EmbeddedResource Include="TestTemplates\0168 - MWR - 2 Day Nuclear Scan Bellah.doc" />
+    <EmbeddedResource Include="TestTemplates\0169 - MWR - DEXA Scan Report.doc" />
+    <EmbeddedResource Include="TestTemplates\0170 - MWR - DEXA.doc" />
+    <EmbeddedResource Include="TestTemplates\0171 - MWR - Dialysis.doc" />
+    <EmbeddedResource Include="TestTemplates\0172 - MWR - Echo Bellah.doc" />
+    <EmbeddedResource Include="TestTemplates\0173 - MWR - Echo Report.doc" />
+    <EmbeddedResource Include="TestTemplates\0174 - MWR - Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0175 - MWR - Letterhead.doc" />
+    <EmbeddedResource Include="TestTemplates\0176 - MWR - Missed Appointment Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0177 - MWR - Nuclear Cardiolite.doc" />
+    <EmbeddedResource Include="TestTemplates\0178 - MWR - Nuclear Report Bellah.doc" />
+    <EmbeddedResource Include="TestTemplates\0179 - MWR - Nuclear Report Kauer.doc" />
+    <EmbeddedResource Include="TestTemplates\0180 - MWR - Nuclear Report Mikinski.doc" />
+    <EmbeddedResource Include="TestTemplates\0181 - MWR - Nuclear Report Single Bellah.doc" />
+    <EmbeddedResource Include="TestTemplates\0182 - MWR - Nuclear Report.doc" />
+    <EmbeddedResource Include="TestTemplates\0183 - MWR - Nuclear Scan.doc" />
+    <EmbeddedResource Include="TestTemplates\0184 - MWR - Phone Call.doc" />
+    <EmbeddedResource Include="TestTemplates\0185 - MWR - Procedure.doc" />
+    <EmbeddedResource Include="TestTemplates\0186 - MWR - Radiology Report.doc" />
+    <EmbeddedResource Include="TestTemplates\0187 - MWR - Stress Test with Cardiolite.doc" />
+    <EmbeddedResource Include="TestTemplates\0188 - MWR - Stress Test with Echo.doc" />
+    <EmbeddedResource Include="TestTemplates\0189 - MWR - Vascular.doc" />
+    <EmbeddedResource Include="TestTemplates\0190 - MWR - Venous Operative Report.doc" />
+    <EmbeddedResource Include="TestTemplates\0191 - MWR - Venous Predetermination Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0192 - NRS - Express Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0193 - NRS - Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0200 - NWO - FollowupVisit.doc" />
+    <EmbeddedResource Include="TestTemplates\0201 - NWO - HistoryandPhysical.doc" />
+    <EmbeddedResource Include="TestTemplates\0194 - NSA_EEG.doc" />
+    <EmbeddedResource Include="TestTemplates\0195 - NSA_EMG.doc" />
+    <EmbeddedResource Include="TestTemplates\0196 - NSA_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0197 - NSA_NewConsultExam.doc" />
+    <EmbeddedResource Include="TestTemplates\0198 - NSA_NormalRecheckExam.doc" />
+    <EmbeddedResource Include="TestTemplates\0199 - NSA_ProcedureNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0202 - NWO_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0203 - NWP - Consultation.doc" />
+    <EmbeddedResource Include="TestTemplates\0204 - NWP - LMN.doc" />
+    <EmbeddedResource Include="TestTemplates\0205 - NWP - New Patient New Problem.doc" />
+    <EmbeddedResource Include="TestTemplates\0206 - NWP - OfficeNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0207 - NWP - Radiology.doc" />
+    <EmbeddedResource Include="TestTemplates\0208 - NWP - RX After Hours.doc" />
+    <EmbeddedResource Include="TestTemplates\0209 - NWP - Work_Comp.doc" />
+    <EmbeddedResource Include="TestTemplates\0211 - OAM - ADDENDUM.doc" />
+    <EmbeddedResource Include="TestTemplates\0212 - OAM - FPA.doc" />
+    <EmbeddedResource Include="TestTemplates\0213 - OAM - IME.doc" />
+    <EmbeddedResource Include="TestTemplates\0214 - OAM - INJECTION.doc" />
+    <EmbeddedResource Include="TestTemplates\0215 - OAM - LETTER.doc" />
+    <EmbeddedResource Include="TestTemplates\0210 - OAL_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0216 - OAM - OFFICE NOTE.doc" />
+    <EmbeddedResource Include="TestTemplates\0217 - OAM - SURGERY CONSULT.doc" />
+    <EmbeddedResource Include="TestTemplates\0218 - OAM - WCP.doc" />
+    <EmbeddedResource Include="TestTemplates\0219 - OAM - XRAY.doc" />
+    <EmbeddedResource Include="TestTemplates\0224 - OBR - ENT_ProgressNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0225 - OBR - Generic_ProgressNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0220 - OAP_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0221 - OAP_Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0222 - OAT_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0223 - OBERD_HP.doc" />
+    <EmbeddedResource Include="TestTemplates\0227 - OLY - Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0226 - OGA_OfficeNoteTDD.doc" />
+    <EmbeddedResource Include="TestTemplates\0228 - ONC - AME.doc" />
+    <EmbeddedResource Include="TestTemplates\0229 - ONC - Chart Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0230 - ONC - Legal.doc" />
+    <EmbeddedResource Include="TestTemplates\0231 - ONC - Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0232 - ONC - QME.doc" />
+    <EmbeddedResource Include="TestTemplates\0233 - OTN - MOC_Letterhead.doc" />
+    <EmbeddedResource Include="TestTemplates\0234 - OTN - OSOR_Letterhead.doc" />
+    <EmbeddedResource Include="TestTemplates\0235 - OTN - OTN_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0236 - OTN - OTN_MOC_ChartNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0237 - OTN - OTN_OSOR_OfficeNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0238 - ONT-KOC - Clinic Note.doc" />
+    <EmbeddedResource Include="TestTemplates\0239 - ONT-KOC - IME.doc" />
+    <EmbeddedResource Include="TestTemplates\0240 - ONT-KOC - Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0241 - ONT-KOC - OpNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0242 - OTN-MOC - MOC_Letterhead.doc" />
+    <EmbeddedResource Include="TestTemplates\0243 - OTN_MOC_ChartNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0244 - OTN-OSOR - OTN Letterhead with Logo.doc" />
+    <EmbeddedResource Include="TestTemplates\0245 - OTN_OSOR_OfficeNote.doc" />
+    <EmbeddedResource Include="TestTemplates\0246 - OTN-PT - Clinic.doc" />
+    <EmbeddedResource Include="TestTemplates\0247 - OTN-UOS - UOS_Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0248 - OTN-UOS - UOS_OfficeNote.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TemplatesExpectedResults\0030.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0061.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TemplatesExpectedResults\0101.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0102.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0103.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0104.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0105.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0106.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0107.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0108.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0109.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0110.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0111.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0112.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0113.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0114.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0115.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0116.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0117.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0118.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0119.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0120.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0121.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0122.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0123.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0124.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0125.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0126.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0127.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0128.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0129.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0130.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0131.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0132.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0133.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0134.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0135.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0136.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0137.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0138.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0139.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0140.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0141.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0142.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0143.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0144.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0145.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0146.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0147.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0148.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0149.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0150.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0151.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0152.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0153.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0154.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0155.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0156.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0157.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0158.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0159.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0160.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0161.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0162.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0163.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0164.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0165.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0166.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0167.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0168.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0169.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0170.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0171.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0172.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0173.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0174.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0175.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0176.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0177.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0178.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0179.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0180.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0181.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0182.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0183.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0184.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0185.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0186.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0187.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0188.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0189.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0190.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0191.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0192.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0193.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0194.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0195.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0196.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0197.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0198.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0199.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0200.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0201.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0202.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0203.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0204.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0205.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0206.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0207.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0208.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0209.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0210.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0211.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0212.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0213.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0214.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0215.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0216.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0217.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0218.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0219.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0220.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0221.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0222.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0223.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0224.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0225.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0226.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0227.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0228.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0229.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0230.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0231.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0232.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0233.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0234.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0235.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0236.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0237.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0238.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0239.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0240.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0241.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0242.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0243.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0244.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0245.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0246.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0247.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0248.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestTemplates\0249 - SOC - Hospital.doc" />
+    <EmbeddedResource Include="TestTemplates\0250 - SOC - Letter - Angle.doc" />
+    <EmbeddedResource Include="TestTemplates\0251 - SOC - Letter.doc" />
+    <EmbeddedResource Include="TestTemplates\0252 - SOC - Note.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TemplatesExpectedResults\0249.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0250.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0251.png" />
+    <EmbeddedResource Include="TemplatesExpectedResults\0252.png" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

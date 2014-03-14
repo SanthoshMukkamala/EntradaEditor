@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://ws.entradahealth.com/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws.entradahealth.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ws.entradahealth.com/Imports">
+      <xsd:import schemaLocation="https://editing_ws.entrada-dev.local/adt.search.services.svc?xsd=xsd0" namespace="http://ws.entradahealth.com/" />
+      <xsd:import schemaLocation="https://editing_ws.entrada-dev.local/adt.search.services.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://editing_ws.entrada-dev.local/adt.search.services.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entrada.Entities" />
+      <xsd:import schemaLocation="https://editing_ws.entrada-dev.local/adt.search.services.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IADTSearchServices_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_AuthenticateASPMembership_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateASPMembership" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_AuthenticateASPMembership_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateASPMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_ChangePasswordWithUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordWithUser" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_ChangePasswordWithUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordWithUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_IsSessionAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsSessionAlive" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_IsSessionAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsSessionAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SignIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignIn" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SignIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SetSignInToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSignInToken" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SetSignInToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSignInTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SignOff_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignOff" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SignOff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignOffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_UpdateASPMembershipUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateASPMembershipUsers" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_UpdateASPMembershipUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateASPMembershipUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_HasADT_InputMessage">
+    <wsdl:part name="parameters" element="tns:HasADT" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_HasADT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HasADTResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchJobTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchJobTypes" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchJobTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchJobTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchJobTypesByDictator_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchJobTypesByDictator" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchJobTypesByDictator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchJobTypesByDictatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchPatients_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPatients" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchPatients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPatientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchPatientsCompact_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPatientsCompact" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchPatientsCompact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPatientsCompactResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchPhysicians_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPhysicians" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchPhysicians_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPhysiciansResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchPhysiciansCompact_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPhysiciansCompact" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchPhysiciansCompact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPhysiciansCompactResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IADTSearchServices_SearchSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchScheduleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IADTSearchServices">
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/Authenticate" message="tns:IADTSearchServices_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/AuthenticateResponse" message="tns:IADTSearchServices_Authenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateASPMembership">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/AuthenticateASPMembership" message="tns:IADTSearchServices_AuthenticateASPMembership_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/AuthenticateASPMembershipResponse" message="tns:IADTSearchServices_AuthenticateASPMembership_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/ChangePassword" message="tns:IADTSearchServices_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/ChangePasswordResponse" message="tns:IADTSearchServices_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePasswordWithUser">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/ChangePasswordWithUser" message="tns:IADTSearchServices_ChangePasswordWithUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/ChangePasswordWithUserResponse" message="tns:IADTSearchServices_ChangePasswordWithUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSessionAlive">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/IsSessionAlive" message="tns:IADTSearchServices_IsSessionAlive_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/IsSessionAliveResponse" message="tns:IADTSearchServices_IsSessionAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SignIn">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/SignIn" message="tns:IADTSearchServices_SignIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/SignInResponse" message="tns:IADTSearchServices_SignIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSignInToken">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/SetSignInToken" message="tns:IADTSearchServices_SetSignInToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/SetSignInTokenResponse" message="tns:IADTSearchServices_SetSignInToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SignOff">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/SignOff" message="tns:IADTSearchServices_SignOff_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/SignOffResponse" message="tns:IADTSearchServices_SignOff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateASPMembershipUsers">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/UpdateASPMembershipUsers" message="tns:IADTSearchServices_UpdateASPMembershipUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/UpdateASPMembershipUsersResponse" message="tns:IADTSearchServices_UpdateASPMembershipUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HasADT">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/HasADT" message="tns:IADTSearchServices_HasADT_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/HasADTResponse" message="tns:IADTSearchServices_HasADT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchJobTypes">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchJobTypes" message="tns:IADTSearchServices_SearchJobTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchJobTypesResponse" message="tns:IADTSearchServices_SearchJobTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchJobTypesByDictator">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchJobTypesByDictator" message="tns:IADTSearchServices_SearchJobTypesByDictator_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchJobTypesByDictatorResponse" message="tns:IADTSearchServices_SearchJobTypesByDictator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPatients">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchPatients" message="tns:IADTSearchServices_SearchPatients_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchPatientsResponse" message="tns:IADTSearchServices_SearchPatients_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPatientsCompact">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchPatientsCompact" message="tns:IADTSearchServices_SearchPatientsCompact_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchPatientsCompactResponse" message="tns:IADTSearchServices_SearchPatientsCompact_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPhysicians">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchPhysicians" message="tns:IADTSearchServices_SearchPhysicians_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchPhysiciansResponse" message="tns:IADTSearchServices_SearchPhysicians_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPhysiciansCompact">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchPhysiciansCompact" message="tns:IADTSearchServices_SearchPhysiciansCompact_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchPhysiciansCompactResponse" message="tns:IADTSearchServices_SearchPhysiciansCompact_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchSchedule">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchSchedule" message="tns:IADTSearchServices_SearchSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IADTSearchServices/SearchScheduleResponse" message="tns:IADTSearchServices_SearchSchedule_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

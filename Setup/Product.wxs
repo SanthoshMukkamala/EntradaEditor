@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?define Manufacturer = "Entrada" ?>
+<?define ProductShortName = "Editor" ?>
+<?define ProductVersion = "0.1.0" ?>
+<?define ProductVersionText = "0.1" ?>
+<?define UpgradeCode = "c3605dbe-3b72-4f8d-8ebd-103520d899f2" ?>
+
+<?define BuildRoot = "..\Entrada.Editor\bin\Debug" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="$(var.Manufacturer) $(var.ProductShortName) $(var.ProductVersionText)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+    
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    <!-- Ensure .Net 4.0 is installed -->
+    <PropertyRef Id="NETFRAMEWORK40CLIENT" />
+    <Condition Message="This setup requires the .NET Framework 4.0 to be installed.">
+      Installed OR NETFRAMEWORK40CLIENT
+    </Condition>
+
+    <Feature Id="ProductFeature" Title="Entrada Editor" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="DictionaryComponents" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Entrada Editor">
+          <Directory Id="DICTIONARYFOLDER" Name="Dictionaries" />
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+       <Component Id="ProductComponent" Guid="D4F330FD-CED1-4AD7-9BF6-9E3D97244C06">
+         <!-- Entrada Assemblies -->
+         <File Source="$(var.BuildRoot)\Entrada.Editor.exe" />
+         <File Source="$(var.BuildRoot)\Entrada.Editor.exe.config" />
+
+         <File Source="$(var.BuildRoot)\Entrada.Editor.Core.dll" />
+         <File Source="$(var.BuildRoot)\Entrada.Editor.Data.dll" />
+         <File Source="$(var.BuildRoot)\Entrada.Editor.Entities.dll" />
+         <File Source="$(var.BuildRoot)\Entrada.Entities.dll" />
+         <File Source="$(var.BuildRoot)\Entrada.WebServices.Client.dll" />
+
+         <!-- 3rd Party Assemblies -->
+         <File Source="$(var.BuildRoot)\AdjMmsEng.dll" />
+         <File Source="$(var.BuildRoot)\AdjMmsEng64.dll" />
+         <File Source="$(var.BuildRoot)\Aspose.Words.dll" />
+         <File Source="$(var.BuildRoot)\AudioDjStudio.dll" />
+         <File Source="$(var.BuildRoot)\C1.Win.C1Editor.4.dll" />
+         <File Source="$(var.BuildRoot)\DevExpress.Data.v12.2.dll" />
+         <File Source="$(var.BuildRoot)\DevExpress.Office.v12.2.Core.dll" />
+         <File Source="$(var.BuildRoot)\DevExpress.RichEdit.v12.2.Core.dll" />
+         <File Source="$(var.BuildRoot)\DevExpress.SpellChecker.v12.2.Core.dll" />
+         <File Source="$(var.BuildRoot)\DevExpress.Utils.v12.2.dll" />
+         <File Source="$(var.BuildRoot)\DevExpress.XtraBars.v12.2.dll" />
+         <File Source="$(var.BuildRoot)\DevExpress.XtraEditors.v12.2.dll" />
+         <File Source="$(var.BuildRoot)\DevExpress.XtraGrid.v12.2.dll" />
+         <File Source="$(var.BuildRoot)\DevExpress.XtraRichEdit.v12.2.dll" />
+         <File Source="$(var.BuildRoot)\DevExpress.XtraRichEdit.v12.2.Extensions.dll" />
+         <File Source="$(var.BuildRoot)\DevExpress.XtraSpellChecker.v12.2.dll" />
+         <File Source="$(var.BuildRoot)\DevExpress.XtraVerticalGrid.v12.2.dll" />
+         <File Source="$(var.BuildRoot)\Faker.NET4.dll" />
+         <File Source="$(var.BuildRoot)\Ionic.Zip.dll" />
+         <File Source="$(var.BuildRoot)\Microsoft.CompilerServices.AsyncTargetingPack.Net4.dll" />
+       </Component> 
+    </ComponentGroup>
+
+    <ComponentGroup Id="DictionaryComponents" Directory="DICTIONARYFOLDER">
+      <Component Id="DictionaryComponent" Guid="257B8879-4C1C-4E72-99A9-054D6D6AF0BF">
+        <!-- Dictionary Files -->
+        <File Source="$(var.BuildRoot)\Dictionaries\american.xlg" />
+        <File Source="$(var.BuildRoot)\Dictionaries\english.aff" />
+        <File Source="$(var.BuildRoot)\Dictionaries\EnglishAlphabet.txt" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

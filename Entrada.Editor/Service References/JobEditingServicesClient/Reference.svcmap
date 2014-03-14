@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d99a9399-5324-4ca1-927f-4ae9cc7ec01a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://editing_ws_app.entrada-dev.local/job.editing.services.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="job.disco" MetadataType="Disco" ID="98b7226b-54b7-462e-9476-2db459a6da34" SourceId="1" SourceUrl="https://editing_ws_app.entrada-dev.local/job.editing.services.svc?disco" />
+    <MetadataFile FileName="job.xsd" MetadataType="Schema" ID="0031322f-63e8-4c02-9cee-4d25f3f01f12" SourceId="1" SourceUrl="https://editing_ws_app.entrada-dev.local/job.editing.services.svc?xsd=xsd1" />
+    <MetadataFile FileName="job1.xsd" MetadataType="Schema" ID="de2eee89-5672-4d30-b4c3-7048d86bc981" SourceId="1" SourceUrl="https://editing_ws_app.entrada-dev.local/job.editing.services.svc?xsd=xsd3" />
+    <MetadataFile FileName="job2.xsd" MetadataType="Schema" ID="0f6085a1-1227-40ea-929a-bdf73580bdef" SourceId="1" SourceUrl="https://editing_ws_app.entrada-dev.local/job.editing.services.svc?xsd=xsd0" />
+    <MetadataFile FileName="job.wsdl" MetadataType="Wsdl" ID="a9d1c43a-e775-44eb-be51-da07887dc2b5" SourceId="1" SourceUrl="https://editing_ws_app.entrada-dev.local/job.editing.services.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="job3.xsd" MetadataType="Schema" ID="f6debd35-84c0-403c-942b-092e8525cc88" SourceId="1" SourceUrl="https://editing_ws_app.entrada-dev.local/job.editing.services.svc?xsd=xsd2" />
+    <MetadataFile FileName="JobEditingServices.wsdl" MetadataType="Wsdl" ID="357a47fb-8eab-4e53-8c12-6eaa9423dc90" SourceId="1" SourceUrl="https://editing_ws_app.entrada-dev.local/job.editing.services.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

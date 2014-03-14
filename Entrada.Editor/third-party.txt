@@ -1,0 +1,32 @@
+﻿Third party controls used by Entrada.Editor:
+
+- Aspose.Words
+  - http://www.aspose.com/.net/word-component.aspx
+  
+  - Used for:
+    - Merging edited text into Word template
+
+- AudioDjStudio
+  - http://www.multimediasoft.com/adjstudnet/index.html
+
+  - Used for:
+    - Audio playback (including speed adjustments)
+
+- ComponentOne
+  - http://www.componentone.com/SuperProducts/StudioWinForms/
+
+  - Used for:
+    - C1Editor for preview on Insert Macro dialog
+
+- DevExpress
+  - http://www.devexpress.com/Products/NET/Controls/WinForms/
+
+  - Used for:
+    - Ribbon, Forms, Docking, Common Controls
+	- RichEditControl for MS Word replacement
+
+- Phillips SpeechMike SDK
+  - \lib\SpeechMike
+
+  - Used for:
+    - Foot pedal interaction

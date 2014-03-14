@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://ws.entradahealth.com/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws.entradahealth.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ws.entradahealth.com/Imports">
+      <xsd:import schemaLocation="https://editing_ws_app.entrada-dev.local/job.editing.services.svc?xsd=xsd0" namespace="http://ws.entradahealth.com/" />
+      <xsd:import schemaLocation="https://editing_ws_app.entrada-dev.local/job.editing.services.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://editing_ws_app.entrada-dev.local/job.editing.services.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entrada.Entities" />
+      <xsd:import schemaLocation="https://editing_ws_app.entrada-dev.local/job.editing.services.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IJobEditingServices_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_AuthenticateASPMembership_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateASPMembership" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_AuthenticateASPMembership_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateASPMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ChangePasswordWithUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordWithUser" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ChangePasswordWithUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordWithUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_IsSessionAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsSessionAlive" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_IsSessionAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsSessionAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_SignIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignIn" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_SignIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_SetSignInToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSignInToken" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_SetSignInToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSignInTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_SignOff_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignOff" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_SignOff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignOffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_UpdateASPMembershipUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateASPMembershipUsers" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_UpdateASPMembershipUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateASPMembershipUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ClaimJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClaimJob" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ClaimJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClaimJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ClaimNextJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClaimNextJob" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ClaimNextJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClaimNextJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_DownloadJobFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadJobFile" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_DownloadJobFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadJobFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_EndWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:EndWork" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_EndWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EndWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetAvailableJobs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableJobs" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetAvailableJobs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetAvailableJobsJSON_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableJobsJSON" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetAvailableJobsJSON_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableJobsJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetAvailableJobsTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableJobsTable" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetAvailableJobsTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableJobsTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetAllQACategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQACategories" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetAllQACategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQACategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetChildQACategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildQACategories" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetChildQACategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildQACategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetEditor_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEditor" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetEditor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEditorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetEditorAssignedJobs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEditorAssignedJobs" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetEditorAssignedJobs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEditorAssignedJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJob" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetQACategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQACategory" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_GetQACategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQACategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_IsJobAssignedToMe_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsJobAssignedToMe" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_IsJobAssignedToMe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsJobAssignedToMeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_MyWorkSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:MyWorkSummary" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_MyWorkSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MyWorkSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ReleaseJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseJob" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ReleaseJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_SplitJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:SplitJob" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_SplitJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SplitJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ReturnCompleteJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnCompleteJob" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ReturnCompleteJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnCompleteJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ReturnIncompleteJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnIncompleteJob" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_ReturnIncompleteJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnIncompleteJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_StartWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartWork" />
+  </wsdl:message>
+  <wsdl:message name="IJobEditingServices_StartWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartWorkResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IJobEditingServices">
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/Authenticate" message="tns:IJobEditingServices_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/AuthenticateResponse" message="tns:IJobEditingServices_Authenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateASPMembership">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/AuthenticateASPMembership" message="tns:IJobEditingServices_AuthenticateASPMembership_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/AuthenticateASPMembershipResponse" message="tns:IJobEditingServices_AuthenticateASPMembership_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/ChangePassword" message="tns:IJobEditingServices_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/ChangePasswordResponse" message="tns:IJobEditingServices_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePasswordWithUser">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/ChangePasswordWithUser" message="tns:IJobEditingServices_ChangePasswordWithUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/ChangePasswordWithUserResponse" message="tns:IJobEditingServices_ChangePasswordWithUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSessionAlive">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/IsSessionAlive" message="tns:IJobEditingServices_IsSessionAlive_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/IsSessionAliveResponse" message="tns:IJobEditingServices_IsSessionAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SignIn">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/SignIn" message="tns:IJobEditingServices_SignIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/SignInResponse" message="tns:IJobEditingServices_SignIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSignInToken">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/SetSignInToken" message="tns:IJobEditingServices_SetSignInToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/SetSignInTokenResponse" message="tns:IJobEditingServices_SetSignInToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SignOff">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/SignOff" message="tns:IJobEditingServices_SignOff_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/SignOffResponse" message="tns:IJobEditingServices_SignOff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateASPMembershipUsers">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IEntradaService/UpdateASPMembershipUsers" message="tns:IJobEditingServices_UpdateASPMembershipUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IEntradaService/UpdateASPMembershipUsersResponse" message="tns:IJobEditingServices_UpdateASPMembershipUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClaimJob">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/ClaimJob" message="tns:IJobEditingServices_ClaimJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/ClaimJobResponse" message="tns:IJobEditingServices_ClaimJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClaimNextJob">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/ClaimNextJob" message="tns:IJobEditingServices_ClaimNextJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/ClaimNextJobResponse" message="tns:IJobEditingServices_ClaimNextJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadJobFile">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/DownloadJobFile" message="tns:IJobEditingServices_DownloadJobFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/DownloadJobFileResponse" message="tns:IJobEditingServices_DownloadJobFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EndWork">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/EndWork" message="tns:IJobEditingServices_EndWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/EndWorkResponse" message="tns:IJobEditingServices_EndWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableJobs">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetAvailableJobs" message="tns:IJobEditingServices_GetAvailableJobs_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetAvailableJobsResponse" message="tns:IJobEditingServices_GetAvailableJobs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableJobsJSON">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetAvailableJobsJSON" message="tns:IJobEditingServices_GetAvailableJobsJSON_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetAvailableJobsJSONResponse" message="tns:IJobEditingServices_GetAvailableJobsJSON_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableJobsTable">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetAvailableJobsTable" message="tns:IJobEditingServices_GetAvailableJobsTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetAvailableJobsTableResponse" message="tns:IJobEditingServices_GetAvailableJobsTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQACategories">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetAllQACategories" message="tns:IJobEditingServices_GetAllQACategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetAllQACategoriesResponse" message="tns:IJobEditingServices_GetAllQACategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildQACategories">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetChildQACategories" message="tns:IJobEditingServices_GetChildQACategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetChildQACategoriesResponse" message="tns:IJobEditingServices_GetChildQACategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEditor">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetEditor" message="tns:IJobEditingServices_GetEditor_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetEditorResponse" message="tns:IJobEditingServices_GetEditor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEditorAssignedJobs">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetEditorAssignedJobs" message="tns:IJobEditingServices_GetEditorAssignedJobs_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetEditorAssignedJobsResponse" message="tns:IJobEditingServices_GetEditorAssignedJobs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJob">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetJob" message="tns:IJobEditingServices_GetJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetJobResponse" message="tns:IJobEditingServices_GetJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQACategory">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetQACategory" message="tns:IJobEditingServices_GetQACategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/GetQACategoryResponse" message="tns:IJobEditingServices_GetQACategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsJobAssignedToMe">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/IsJobAssignedToMe" message="tns:IJobEditingServices_IsJobAssignedToMe_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/IsJobAssignedToMeResponse" message="tns:IJobEditingServices_IsJobAssignedToMe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MyWorkSummary">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/MyWorkSummary" message="tns:IJobEditingServices_MyWorkSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/MyWorkSummaryResponse" message="tns:IJobEditingServices_MyWorkSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseJob">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/ReleaseJob" message="tns:IJobEditingServices_ReleaseJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/ReleaseJobResponse" message="tns:IJobEditingServices_ReleaseJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SplitJob">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/SplitJob" message="tns:IJobEditingServices_SplitJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/SplitJobResponse" message="tns:IJobEditingServices_SplitJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCompleteJob">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/ReturnCompleteJob" message="tns:IJobEditingServices_ReturnCompleteJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/ReturnCompleteJobResponse" message="tns:IJobEditingServices_ReturnCompleteJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnIncompleteJob">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/ReturnIncompleteJob" message="tns:IJobEditingServices_ReturnIncompleteJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/ReturnIncompleteJobResponse" message="tns:IJobEditingServices_ReturnIncompleteJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartWork">
+      <wsdl:input wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/StartWork" message="tns:IJobEditingServices_StartWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://ws.entradahealth.com/IJobEditingServices/StartWorkResponse" message="tns:IJobEditingServices_StartWork_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

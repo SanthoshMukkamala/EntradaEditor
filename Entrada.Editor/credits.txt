@@ -1,0 +1,7 @@
+﻿Most icons are provided courtesy of FatCow:
+- http://www.fatcow.com/free-icons
+- Used under Creative Commons Attribution 3.0 License
+
+Application icon based on work from Jakub Stacho:
+- http://www.jakubstacho.cz/checkout/
+- Used under Creative Commons Attribution 2.5 License

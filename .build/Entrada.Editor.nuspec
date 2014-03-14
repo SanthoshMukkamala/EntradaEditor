@@ -1,0 +1,13 @@
+<package>
+  <metadata>
+    <id>Entrada.Editor</id>
+    <version></version>
+    <authors>SYSTEM</authors>
+    <owners>SYSTEM</owners>
+    <licenseUrl>http://example.com</licenseUrl>
+    <projectUrl>http://example.com</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Entrada.Editor deployment package</description>
+    <releaseNotes />
+  </metadata>
+</package>
