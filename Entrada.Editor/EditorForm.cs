@@ -115,7 +115,7 @@ namespace Entrada.Editor
                  barCategory.Enabled = false;
                 barSubCategory.Enabled = false;
 
-                // To Add Select Item to Category List
+                // To Add Select Item to Category Last
                 List<Entities.QACategory> objCategory = JobRepository.GetAllQACategories().Result.ToList();
                 Entities.QACategory obj = new Entities.QACategory
                 {
