@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entrada.Editor.Core.Entities
 {
-   Public class JobsEntity
+   class JobsEntity
     {
     }
 }
