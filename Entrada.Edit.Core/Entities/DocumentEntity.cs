@@ -52,7 +52,6 @@ namespace Entrada.Editor.Core
         public bool CanSendToNextQA { get { return Job.QAData.CanReturnTo(NextQAStatus.ReturnJobToNextQA); } }
         public bool CanSendToEntradaQA { get { return Job.QAData.CanReturnTo(NextQAStatus.ReturnJobToEntradaQA); } }
         public bool CanSendToCR { get { return Job.QAData.CanReturnTo(NextQAStatus.ReturnJobToCR); } }
-     
 
         public event EventHandler IsDirtyChanged;
         public event EventHandler SaveRequested;
@@ -121,9 +120,6 @@ namespace Entrada.Editor.Core
                 recognized_wordfile = Path.Combine(storage_dir, job_number, job_number + ".doc");
             }
 
-
-            //using (EditedMemoryStream = EncryptedFileSystem.GetDecryptedStream(recognized_textfile))
-
             if (EditorCore.Settings.Editor.Type.ToLowerInvariant() == "editor")
             {
                 using (var sr = EncryptedFileSystem.GetStreamReader(recognized_textfile, Encoding.UTF7))
@@ -132,20 +128,9 @@ namespace Entrada.Editor.Core
                     EditedText = RecognizedText;
                 }
             }
-            //else
-            //{
-            //    using (Stream s = File.Create("H:\\Files\\test1.doc"))
-            //    {
-            //        sr.BaseStream.CopyTo(s);
-            //    }                    
-            //}
-
 
             if (File.Exists(WipFile))
                 HasWorkInProgress = true;
-
-
-
             QANote = string.Empty;
 
             job.Encounter.Patient = Demographics.ToPatient();
