@@ -52,7 +52,7 @@ namespace Entrada.Editor.Core
         public bool CanSendToNextQA { get { return Job.QAData.CanReturnTo(NextQAStatus.ReturnJobToNextQA); } }
         public bool CanSendToEntradaQA { get { return Job.QAData.CanReturnTo(NextQAStatus.ReturnJobToEntradaQA); } }
         public bool CanSendToCR { get { return Job.QAData.CanReturnTo(NextQAStatus.ReturnJobToCR); } }
-        public enum JobSendToEnum { None, Complete, SameQA, NextQA, EntradaQA, ClientReview };
+     
 
         public event EventHandler IsDirtyChanged;
         public event EventHandler SaveRequested;
